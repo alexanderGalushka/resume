@@ -1,8 +1,6 @@
 import { listenAndServe } from "https://deno.land/std@0.111.0/http/server.ts";
 
-function handleRequest(request) {
-  const { pathname } = new URL(request.url);
-
+function handleRequest() {
   // Respond with HTML
 
   const html = await Deno.readFile("./index.html");
