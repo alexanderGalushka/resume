@@ -1,13 +1,14 @@
 import { listenAndServe } from "https://deno.land/std@0.111.0/http/server.ts";
 
-function handleRequest() {
+function handleRequest(_req) {
   // Respond with HTML
 
   const html = await Deno.readFile("./index.html");
 
   return new Response(html, {
+    status: 200,
     headers: {
-      "content-type": "text/html; charset=UTF-8",
+      "content-type": "text/html",
     },
   });
   
